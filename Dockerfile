@@ -12,4 +12,4 @@ COPY src ./src
 RUN poetry config virtualenvs.in-project true && \
     poetry install --only=main --no-root
 
-ENTRYPOINT [ "poetry", "run", "uvicorn", "main:app"]
+ENTRYPOINT [ "poetry", "run", "uvicorn", "--host", "0.0.0.0", "main:app"]
